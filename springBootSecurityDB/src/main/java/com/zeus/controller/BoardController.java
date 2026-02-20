@@ -1,5 +1,6 @@
 package com.zeus.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ public class BoardController {
 		return "board/list";
 	}
 
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MEMBER')")
 	@GetMapping("/register")
 	public String register() {
 		log.info("registerForm : 모두가 접근 가능");

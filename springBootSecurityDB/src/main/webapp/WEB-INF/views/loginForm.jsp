@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +28,15 @@
 		<div>
 			<input type="password" name="password" value="">
 		</div>
+		
+		<!-- 로그인 상태유지 체크박스 -->
+		<div>
+			<input type="checkbox" name="remember-me"> 로그인 상태유지
+		</div>
 		<div>
 			<input type="submit">
 		</div>
-		<!-- 사용 하려면 porm.xml에서 시큐리티 의존성 설정 -->
+
 		<sec:csrfInput />
 	</form>
 </body>
